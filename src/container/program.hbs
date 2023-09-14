@@ -31,13 +31,6 @@
 
 
 
-                    {{#with venue}}
-                    venue: {{name}}
-                    <address>{{location.address}}</address>
-                    <br>
-                    <address>{{location.city}}, {{location.country}}</address>
-                    <br>
-                    {{/with}}
 
 
                     {{#with museum}}
@@ -65,15 +58,14 @@
 
                     {{/with}}
                     <br>
-                    Guide: {{#with guide}}
-                    <br>
-                    <em>{{name}}</em>
-                    <br>
-                    <em>{{language}}</em>
-                    <br>
-                    rating: {{rating}}
-                    {{/with}}
 
+                    {{#with venue}}
+                    venue: {{name}}
+                    <address>{{location.address}}</address>
+                    <br>
+                    <address>{{location.city}}, {{location.country}}</address>
+                    <br>
+                    {{/with}}
 
                     <br>
 
@@ -89,6 +81,18 @@
                         </li>
                         {{/each}}
                     </ul>
+
+                    Guide: {{#with guide}}
+                    <br>
+                    <em>{{name}}</em>
+                    <br>
+                    <em>{{language}}</em>
+                    <br>
+                    rating: {{rating}}
+                    {{/with}}
+
+
+
                     {{/with}}
 
                 </li>
