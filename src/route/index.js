@@ -269,9 +269,7 @@ router.get('/work', function (req, res) {
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-bio
 
-master
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
@@ -371,7 +369,6 @@ router.get('/person', function (req, res) {
   })
 })
 
-bio
 // // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
@@ -476,5 +473,4 @@ router.get('/bio', function (req, res) {
 // ================================================================
 
 // Підключаємо роутер до бек-енду
-master
 module.exports = router
