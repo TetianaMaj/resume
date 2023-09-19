@@ -1,0 +1,157 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <div>
+        <section>
+            <h1>{{name}}</h1>
+            <br>
+            <hr>
+            <em>{{description}}</em>
+            <br>
+            {{#with history}}
+            <time>{{year}},</time>
+            <br>
+            <b><em>{{founder}}</em></b>
+            {{/with}}
+
+        </section>
+    </div>
+    <hr>
+    <div>
+        <section>
+            <h1 class="badge text-bg-success">Types:</h1>
+            <ul>
+                {{#each types}}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+    <br>
+    <hr>
+    <div>
+        <section>
+            <h1>Syntax:</h1>
+            {{#with syntax}}
+
+            <b class="badge text-bg-primary">Variables:</b>
+            <ul>
+                {{#each variables }}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+
+            <b class="badge text-bg-info">Functions:</b>
+            <ul>
+                {{#each functions }}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+
+            <b class="badge text-bg-warning">Conditionals:</b>
+            <ul>
+                {{#each conditionals }}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+
+            <b>Loops:</b>
+            <ul>
+                {{#each loops }}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+
+            <b>Classes:</b>
+            <ul>
+                {{#each classes }}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/with}}
+        </section>
+    </div>
+    <hr>
+    <div>
+        <section>
+            <h3 class="badge text-bg-danger">Features:</h3>
+            <ul>
+                {{#each features}}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+    <br>
+
+    <hr>
+    <div>
+        <section>
+            <h3 class="badge text-bg-secondary">Libraries:</h3>
+            <ul>
+                {{#each libraries}}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+    <br>
+    <hr>
+    <div>
+        <section>
+            <h3 class="badge text-bg-success"> Tools:</h3>
+            <ul>
+                {{#each tools}}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+    <br>
+    <hr>
+    <section>
+        <h3 class=" badge text-bg-primary">Community:</h3>
+        <ul>
+            <li>
+                {{community.[0].name}}, {{community.[0].type}}
+            </li>
+            <li>
+                {{community.[1].name}}, {{community.[1].type}}
+            </li>
+            <li>
+                {{community.[2].name}}, {{community.[2].type}}
+            </li>
+            <li>
+                {{community.[3].name}}, {{community.[3].type}}
+            </li>
+        </ul>
+    </section>
+</div>
+<br>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
