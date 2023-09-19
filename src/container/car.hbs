@@ -1,0 +1,225 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <div>
+        <section>
+            <h1>{{make}}</h1>
+            <h2>{{model}}</h2>
+            <hr>
+            <em>{{year}}</em>
+            <br>
+            <em>{{color}}</em>
+    </div>
+    <div>
+        <section>
+            <h2 class="badge text-bg-primary">Features</h2>
+            {{#with features}}
+            <h3>Interior</h3>
+            {{#with interior}}
+            <h4>Seats:</h4>
+            {{#with seats}}
+            material: {{material}}
+            <br>
+            color: {{color}}
+
+            {{/with}}
+            {{#if seats}}
+            <br>
+            heated
+            <br>
+            ventilated
+            {{/if}}
+            <br>
+            <h4 class="badge text-bg-success">Dashboard:</h4>
+            {{#with dashboard}}
+            material: {{material}}
+            <br>
+            color: {{color}}
+            <br>
+            <h4 class="badge text-bg-danger">Display:</h4>
+            <br>
+            {{#with display}}
+            type: {{type}}
+            <br>
+            size: {{size}}
+            <br>
+            resolution: {{resolution}}
+            <br>
+            {{/with}}
+            {{#if display}}
+
+            touchscreen
+
+            {{/if}}
+            <br>
+            {{/with}}
+
+            <h4 class="badge text-bg-warning">Audio:</h4>
+            <br>
+            {{#with audio}}
+            system: {{system}}
+            <br>
+            speakers: {{speakers}}
+
+            {{/with}}
+            <br>
+            {{#if audio}}
+
+            subwoofer
+            <br>
+            bluetooth
+            <br>
+            USB
+
+            {{/if}}
+            {{/with}}
+            <br>
+            <br>
+            <h4 class="badge text-bg-info">Exterior:</h4>
+            {{#with exterior}}
+            <br>
+            <h5 class="badge text-bg-info">Wheels:</h5>
+            {{#with wheels}}
+            size: {{size}}
+            <br>
+            type: {{type}}
+            <br>
+            color: {{color}}
+            <br>
+            <br>
+            {{/with}}
+            <b class="badge text-bg-danger">Headlights:</b>
+            <br>
+            {{#if headlights}}
+
+            automatic
+
+            {{/if}}
+            {{#with headlights}}
+            <br>
+            type: {{type}}
+            <br>
+            brightness: {{brightness}}
+            <br>
+            <br>
+
+            {{/with}}
+
+            <b class="badge text-bg-danger">Sunroof:</b>
+            <br>
+            {{#if sunroof}}
+
+            automatic
+
+            {{/if}}
+            {{#with sunroof}}
+            <br>
+            type: {{type}}
+            <br>
+            size: {{size}}
+
+            <br>
+            {{/with}}
+
+            {{/with}}
+
+            <b class="badge text-bg-warning">Safety:</b>
+            {{#with safety}}
+            <br>
+            <b class="badge text-bg-warning">Airbags:</b>
+            {{#with airbags}}
+            <br>
+            front: {{front}}
+            <br>
+            side: {{side}}
+            <br>
+            knee: {{knee}}
+            <br>
+            rear: {{rear}}
+            <br>
+
+            {{/with}}
+            <b class="badge text-bg-primary">Assistance:</b>
+            {{#if assistance}}
+            <br>
+            blind_spot_monitoring
+            <br>
+            rear_cross_traffic_alert
+            <br>
+            lane_departure_warning
+            <br>
+            adaptive_cruise_control
+            <br>
+            collision_warning
+
+            {{/if}}
+
+            {{/with}}
+            <br>
+
+            {{/with}}
+
+            <b class="badge text-bg-primary">Engine:</b>
+            {{#with engine}}
+            <br>
+            type: {{type}}
+            <br>
+            displacement: {{displacement}}
+            <br>
+            horsepower: {{horsepower}}
+            <br>
+            torque: {{torque}}
+            <br>
+            <b class="badge text-bg-primary">Transmission:</b>
+            {{#with transmission}}
+            <br>
+            type: {{type}}
+            <br>
+            gears: {{gears}}
+            <br>
+            {{/with}}
+            {{/with}}
+            <br>
+            <b class="badge text-bg-primary">Fuel economy:</b>
+            {{#with fuel_economy}}
+            <br>
+            city: {{city}}
+            <br>
+            highway: {{highway}}
+            <br>
+            combined: {{combined}}
+            <br>
+            {{/with}}
+            <br>
+            <b class="badge text-bg-primary">Price:</b>
+            {{#with price}}
+            <br>
+            base: {{base}}
+            <br>
+            destination: {{destination}}
+            <br>
+            <b class="badge text-bg-primary">Options:</b>
+            {{#with options}}
+            <br>
+            navigation: {{navigation}}
+            <br>
+            moonroof: {{moonroof}}
+            <br>
+            premium paint: {{premium_paint}}
+            <br>
+            {{/with}}
+            <em>Total:</em>
+            {{total}}
+
+            {{/with}}
+        </section>
+    </div>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
