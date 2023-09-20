@@ -1,0 +1,215 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <div>
+        <section>
+            <h1>{{name}}</h1>
+            <br>
+            <b>{{description}}</b>
+            <br>
+            <em>price: {{price}}</em>
+            <br>
+            <b>category: {{category}}</b>
+            <br>
+            <hr>
+        </section>
+    </div>
+    <div>
+        <section>
+            <h2>Features</h2>
+            {{#with features}}
+
+            <h4 class="badge text-bg-primary">Processor</h4>
+            <br>
+            {{#with processor}}
+            brand: {{brand}},
+            <br>
+            model: {{model}},
+            <br>
+            speed: {{speed}},
+            <br>
+            cores: {{cores}},
+            <br>
+            cache: {{cache}}
+            <br>
+            <hr>
+
+            {{/with}}
+
+            <h4 class="badge text-bg-secondary">Memory</h4>
+            <br>
+            {{#with memory}}
+            type: {{type}},
+            <br>
+            size: {{size}},
+            <br>
+            speed: {{speed}}
+            <br>
+            <hr>
+            {{/with}}
+
+            <h4 class="badge text-bg-success">Storage</h4>
+            <br>
+            {{#with storage}}
+            type: {{type}},
+            <br>
+            size: {{size}}
+            <br>
+            <hr>
+            {{/with}}
+
+            <h4 class="badge text-bg-danger">Display</h4>
+            <br>
+            {{#with display}}
+            size: {{size}},
+            <br>
+            resolution: {{resolution}},
+            <br>
+            technology: {{technology}},
+            <br>
+            color space: {{color_space}},
+            <br>
+            brightness: {{brightness}},
+            <br>
+            refresh_rate: {{refresh_rate}}
+            <br>
+            <hr>
+
+            {{/with}}
+
+            <h4 class="badge text-bg-warning">Graphics</h4>
+            <br>
+            {{#with graphics}}
+            brand: {{brand}},
+            <br>
+            model: {{model}},
+            <br>
+            memory: {{memory}}
+            <br>
+            <hr>
+
+            {{/with}}
+
+            <h5 class="badge text-bg-info">Ports</h5>
+            <br>
+            <ul>
+
+                <li>
+                    <p>{{ports.[0].type}}</p>
+                </li>
+                <li>
+                    <p>{{ports.[0].count}}</p>
+                </li>
+
+            </ul>
+            <br>
+
+            <h6 class="badge text-bg-light">Features:</h6>
+            <br>
+            <ul>
+                {{#each ports}}
+
+                <ul>
+                    {{#each features}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </ul>
+            {{/each}}
+            <ul>
+
+                <li>
+                    <p>{{ports.[1].type}}</p>
+                </li>
+                <li>
+                    <p>{{ports.[1].count}}</p>
+                </li>
+
+            </ul>
+            <br>
+            <hr>
+
+            <h5 class="badge text-bg-dark">Battery</h5>
+            <br>
+            {{#with battery}}
+            type: {{type}},
+            <br>
+            capacity: {{capacity}},
+            <br>
+            life: {{life}}
+            <br>
+            <hr>
+            {{/with}}
+
+            Weight: {{weight}}
+            <br>
+            <hr>
+
+            <h5 class="badge text-bg-dark">Dimensions</h5>
+            <br>
+            {{#with dimensions}}
+            height: {{height}},
+            <br>
+            width: {{width}},
+            <br>
+            depth: {{depth}}
+            <br>
+            <hr>
+            {{/with}}
+            Operating system: {{operating_system}}
+            <br>
+            <hr>
+
+            <h5 class="badge text-bg-light">Accessories:</h5>
+            <br>
+            <ul>
+
+                <li>
+                    <p>{{accessories.[0].name}}</p>
+                </li>
+                <li>
+                    <p>{{accessories.[0].price}}</p>
+                </li>
+
+            </ul>
+
+            <ul>
+
+                <li>
+                    <p>{{accessories.[1].name}}</p>
+                </li>
+                <li>
+                    <p>{{accessories.[1].price}}</p>
+                </li>
+
+            </ul>
+
+
+            <ul>
+
+                <li>
+                    <p>{{accessories.[2].name}}</p>
+                </li>
+                <li>
+                    <p>{{accessories.[2].price}}</p>
+                </li>
+
+            </ul>
+            <br>
+            <hr>
+
+
+            {{/with}}
+        </section>
+    </div>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
