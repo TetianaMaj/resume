@@ -1,0 +1,124 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <div>
+        <h1>{{name}}</h1>
+        <hr>
+    </div>
+    <div>
+        <h2>Users</h2>
+        <br>
+        {{#each users}}
+        <b>{{id}} </b>
+        <br>
+        <b>{{name}}</b>
+        <br>
+        {{gender}}
+        <br>
+        {{age}}
+        <br>
+        <hr>
+        <div>
+            <h2 class="badge text-bg-primary">Friends</h2>
+            <br>
+            {{#each friends}}
+            {{id}}
+            <br>
+            {{name}}
+            <br>
+            {{gender}}
+            <br>
+            {{age}}
+            <br>
+            <hr>
+            <div>
+                <h4 class="badge text-bg-secondary">Mutual friends</h4>
+                <br>
+                {{#each mutual_friends}}
+                {{id}}
+                <br>
+                {{name}}
+                <br>
+                {{gender}}
+                <br>
+                {{age}}
+                <br>
+                <hr>
+                <div>
+                    <h5 class="badge text-bg-success">Mutual friends</h5>
+                    <br>
+                    {{#each mutual_friends}}
+                    {{id}}
+                    <br>
+                    {{name}}
+                    <br>
+                    {{gender}}
+                    <br>
+                    {{age}}
+                    <br>
+                    <hr>
+
+                    {{/each}}
+
+                </div>
+
+
+
+                {{/each}}
+
+            </div>
+            <div>
+                <h6 class="badge text-bg-danger">Groups</h6>
+                <br>
+                {{#each groups}}
+                {{id}}
+                <br>
+                {{name}}
+                <br>
+                {{description}}
+                <br>
+                <hr>
+                <div>
+                    <h6 class="badge text-bg-warning">Members</h6>
+                    <br>
+                    {{#each members}}
+                    {{id}}
+                    <br>
+                    {{name}}
+                    <br>
+                    {{gender}}
+                    <br>
+                    {{age}}
+                    <br>
+                    <hr>
+                    {{/each}}
+                </div>
+
+
+
+                {{/each}}
+
+            </div>
+
+
+
+            {{/each}}
+        </div>
+
+
+        {{/each}}
+
+
+    </div>
+
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
