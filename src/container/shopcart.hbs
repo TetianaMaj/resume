@@ -1,0 +1,152 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    <div class="nav m-5">
+        {{#with navigation}}
+        {{#each links}}
+        <div class="nav-item">
+            <a href={{href}} class="nav-link">{{text}}</a>
+        </div>
+        {{/each}}
+
+        {{/with}}
+        <br>
+
+        <div class="col-12 m-3">
+            <div class="row">
+                {{#with header}}
+                <h1>{{title}}</h1>
+                {{#with button}}
+                <button class="col-3 href={{link}} class=" btn btn-outline-secondary m-4">{{text}}</button>
+                {{/with}}
+                {{/with}}
+
+            </div>
+        </div>
+
+        <hr class="m-5">
+        <hr>
+
+
+        {{#each goodsBlock}}
+
+
+        {{>cartGoodsltem}}
+
+        {{/each}}
+
+
+
+
+
+        <hr class="m-3">
+        <hr>
+        <div class="col-12">
+            <div class="row">
+                {{#with total}}
+                <div class="col-4">
+                    <h5>{{title}}</h5>
+                    <h1>{{amount}}</h1>
+                    <div>{{delivery}}</div>
+                    {{#each buttons}}
+                    {{#if isSuccess}}
+                    <button href={{link}} class="btn btn-success my-2 px-1">{{text}}</button>
+                    {{/if}}
+                    {{#if isOutline}}
+                    <button href={{link}} class="btn btn-outline-success my-2 px-1">{{text}}</button>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+
+        <hr class="m-3">
+        <div class="col-12">
+            <div class="row">
+                {{#with goodsOtherBlock}}
+                <h1 class="text-center">{{title}}</h1>
+                <div class="card">
+                    <div class="row">
+                        {{#each cards}}
+                        <div class="card col-4">
+                            <img class="card-img-top" src="https://picsum.photos/400/200">
+
+                            <div class="card-body">
+                                <h3 class="card-title">{{title}}
+                                    {{#unless isHot}}
+                                    <span class="badge text-bg-warning rounded-pill">HOT</span>
+                                    {{/unless}}
+                                    {{#unless idNew}}
+                                    <span class="badge text-bg-primary rounded-pill">НОВЕ</span>
+                                    {{/unless}}
+                                </h3>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div class="col-12">
+            <div class="row">
+                {{#with subscribe}}
+
+                <div class="card">
+
+                    <h2 class="col-3">
+                        {{header}}
+                    </h2>
+                    <p class="col-2">
+                        {{description}}
+                    </p>
+                    {{#each buttons}}
+                    <div class="col-3">
+                        <button href={{link}} class="btn btn-primary m-1 p-1">{{text}}</button>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+
+                </div>
+
+
+                {{#each footer}}
+                <div class="nav col-2">
+                    <div>
+                        {{#each this}}
+                        <div>
+                            <a class="nav-link" href={{this.link}}>{{this.text}}</a>
+                        </div>
+
+                        {{/each}}
+                    </div>
+                </div>
+
+
+
+                {{/each}}
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
