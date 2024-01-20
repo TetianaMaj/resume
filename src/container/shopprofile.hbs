@@ -1,0 +1,262 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    <div class="nav">
+        {{#with navigation}}
+        {{#each links}}
+        <div class="nav-item">
+            <a href={{href}} class="nav-link">{{text}}</a>
+        </div>
+        {{/each}}
+
+        {{/with}}
+        <div class="col-12">
+            <div class="row">
+                <h1>{{header}}</h1>
+                <div class="nav nav-tabs m-2">
+                    {{#with purchase}}
+
+                    {{#each tabs}}
+
+                    <div class="nav-item">
+                        <a class="nav-link">{{this}}</a>
+                    </div>
+                    {{/each}}
+
+                </div>
+
+                {{#with actionBlock}}
+                <div class="col-4 m-2">
+                    {{#with input}}
+
+                    <input class="form-control" placeholder="{{placeholder}}">
+
+                    {{/with}}
+
+                </div>
+                {{#each buttons}}
+                <div class="col-2 m-2">
+                    {{#if isSuccess}}
+                    <button href={{link}} class="btn btn-success my-2 px-1">{{text}}</button>
+                    {{/if}}
+                    {{#if isOutline}}
+                    <button href={{link}} class="btn btn-outline-success my-2 px-1">{{text}}</button>
+                    {{/if}}
+                    {{#if isDanger}}
+                    <button href={{link}} class="btn btn-outline-danger my-2 px-1">{{text}}</button>
+                    {{/if}}
+                </div>
+                {{/each}}
+
+                {{/with}}
+                <div class="col-12 m-2">
+                    <div class="row">
+                        {{#each itemList}}
+                        {{>purchaseltem}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{/with}}
+                {{#with userInfo}}
+                <h2>{{title}}</h2>
+                <div class="card m-2">
+
+
+
+
+                    {{#with profileData}}
+                    <h3>{{title}}</h3>
+                    <div class="card m-2">
+
+
+                        <div class="col-12 m-2">
+                            <div class="row">
+
+                                {{#with fullName}}
+
+                                {{#with surname}}
+                                <div class="col-2 m-2">
+                                    {{title}} {{value}}
+                                </div>
+                                {{/with}}
+                                {{#with name}}
+                                <div class="col-2 m-2">
+                                    {{title}} {{value}}
+                                </div>
+                                {{/with}}
+                                {{#with middleName}}
+                                <div class="col-2 m-2">
+                                    {{title}} {{value}}
+                                </div>
+                                {{/with}}
+
+
+
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card m-2">
+
+
+                        <div class="col-12 m-2">
+                            <div class="row">
+
+                                {{#with otherInfo}}
+
+                                {{#with birthday}}
+                                <div class="col-2 m-2">
+                                    {{title}} {{value}}
+                                </div>
+                                {{/with}}
+                                {{#with sex}}
+                                <div class="col-2 m-2">
+                                    {{title}} {{value}}
+                                </div>
+                                {{/with}}
+                                {{#with language}}
+                                <div class="col-2 m-2">
+                                    {{title}} {{value}}
+                                </div>
+                                {{/with}}
+
+
+
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <div class="card m-2">
+
+
+                        <div class="col-12">
+                            <div class="row">
+
+                                {{#each buttons}}
+                                <div class="col-2 m-2">
+                                    {{#if isPrimary}}
+                                    <button href={{link}} class="btn btn-primary my-2 px-1">{{text}}</button>
+                                    {{/if}}
+                                    {{#if isSecondary}}
+                                    <button href={{link}} class="btn btn-outline-secondary my-2 px-1">{{text}}</button>
+                                    {{/if}}
+                                    {{#if isDanger}}
+                                    <button href={{link}} class="btn btn-outline-danger my-2 px-1">{{text}}</button>
+                                    {{/if}}
+                                </div>
+
+
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="card m-2">
+
+                    {{#with recipients}}
+                    <h3>{{title}}</h3>
+
+
+
+
+                    <div class="col-12">
+                        <div class="row">
+                            {{#each users}}
+                            <div class="card col-4 m-2">
+                                {{name}} {{phone}}
+                                {{#with button}}
+                                <button href={{link}} class="btn btn-primary my-2 px-1">{{text}}</button>
+                                {{/with}}
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+                <div class="card m-2">
+
+                    {{#with contacts}}
+                    <h3>{{title}}</h3>
+
+                    <div class="col-12">
+                        <div class="row">
+                            {{#each contactData}}
+                            <div class="card col-4 m-2">
+                                {{title}} {{value}}
+                                {{#with button}}
+                                {{#if isPrimary}}
+                                <button href={{link}} class="btn btn-primary my-2 px-1">{{text}}</button>
+                                {{/if}}
+                                {{#if isSecondary}}
+                                <button href={{link}} class="btn btn-outline-secondary my-2 px-1">{{text}}</button>
+                                {{/if}}
+                                {{#if isDanger}}
+                                <button href={{link}} class="btn btn-outline-danger my-2 px-1">{{text}}</button>
+                                {{/if}}
+                                {{/with}}
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+
+
+
+
+                {{/with}}
+
+
+
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <hr>
+        {{#each footer}}
+        <div class="nav col-2">
+            <div>
+                {{#each this}}
+                <div>
+                    <a class="nav-link" href={{this.link}}>{{this.text}}</a>
+                </div>
+
+                {{/each}}
+            </div>
+        </div>
+
+
+
+        {{/each}}
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
