@@ -1,0 +1,43 @@
+<div class="col-4">
+    <div class="card">
+
+        <img class="card-img-top" src="https://picsum.photos/400/200">
+        <div class=" card-body">
+            {{#if isHot}}
+            <span class="badge text-bg-warning rounded-pill">HOT</span>
+            {{/if}}
+            {{#if isNew}}
+            <span class="badge text-bg-primary rounded-pill">НОВЕ</span>
+            {{/if}}
+
+            {{#if isFast}}
+            <button class="btn btn-success my-2 px-1">Швидка доставка</button>
+            {{/if}}
+            {{#if isFree}}
+            <button class="btn btn-secondary my-2 px-1">Безкоштовна досьавка</button>
+            {{/if}}
+            <b>{{name}}</b>
+            {{#with review}}
+            <p>{{amount}} {{text}}</p>
+            {{/with}}
+            <div>{{price}}</div>
+            <div>{{delivery}}</div>
+
+            {{#each buttons}}
+            {{#if isPrimary}}
+            <button href={{link}} class="btn btn-primary my-2 px-1">{{text}}</button>
+            {{/if}}
+            {{#if isSecondary}}
+            <button href={{link}} class="btn btn-outline-secondary my-2 px-1">{{text}}</button>
+            {{/if}}
+            {{/each}}
+            <ul>
+                {{#each characteristics}}
+                <li>{{title}} {{value}}</li>
+
+                {{/each}}
+            </ul>
+
+        </div>
+    </div>
+</div>
